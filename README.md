@@ -22,5 +22,5 @@ make
 
 ### Run
 ```bash
-./IPFE_test_wib 5 10 wib {n} {d} {sch} {name[4:]} 0 {level} {ITS} 0
+./IPFE_test_wib {n} {d} {sch} {name[4:]} 0 {level} {ITS} 0
 ```
