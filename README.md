@@ -1,4 +1,4 @@
-## 支持通配符的SM9标识加密方案实现（基于 PBC Library）
+## 支持通配符的内积加密(WIB-IPFE)方案实现（基于 PBC Library）
 ### 测试环境：Ubuntu 20.04 及以上
 ### Install PBC Library
 ```bash
