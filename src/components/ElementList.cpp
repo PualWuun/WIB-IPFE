@@ -66,6 +66,13 @@ void ElementList::remove_front() {
     this->data.erase(this->data.begin());
 }
 
+void ElementList::remove_front_at(int i) {
+    if(i > this->len()){
+        throw "Illegal index for remove";
+    }
+    this->data.erase(this->data.begin() + i);
+}
+
 bool ElementList::operator!=(const ElementList &b) {
     if(this->data.size() != b.data.size() || this->data.size() * b.data.size() == 0) return true;
     for(int i = 0;i < this->data.size();i++) if(element_cmp(*this->data[i], *b.data[i])) return true;

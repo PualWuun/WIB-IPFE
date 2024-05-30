@@ -31,6 +31,8 @@ class ElementList {
 
     void remove_front();
 
+    void remove_front_at(int i);
+
     bool operator!=(const ElementList &b);
 
     element_t *At(int i);
