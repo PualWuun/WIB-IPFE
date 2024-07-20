@@ -1,0 +1,157 @@
+[
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/schemes/ibbe_pk_ipfe.cpp.o -c /root/gozya/WIB_IPFE/src/schemes/ibbe_pk_ipfe.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/schemes/ibbe_pk_ipfe.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/curve/params.cpp.o -c /root/gozya/WIB_IPFE/src/curve/params.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/curve/params.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/components/HIDparam.cpp.o -c /root/gozya/WIB_IPFE/src/components/HIDparam.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/components/HIDparam.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/components/ElementList.cpp.o -c /root/gozya/WIB_IPFE/src/components/ElementList.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/components/ElementList.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/components/MasterKey.cpp.o -c /root/gozya/WIB_IPFE/src/components/MasterKey.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/components/MasterKey.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/components/PublicKey.cpp.o -c /root/gozya/WIB_IPFE/src/components/PublicKey.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/components/PublicKey.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/components/SecretKey.cpp.o -c /root/gozya/WIB_IPFE/src/components/SecretKey.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/components/SecretKey.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/components/CipherText.cpp.o -c /root/gozya/WIB_IPFE/src/components/CipherText.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/components/CipherText.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/utils/func.cpp.o -c /root/gozya/WIB_IPFE/src/utils/func.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/utils/func.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/src/utils/utils.cpp.o -c /root/gozya/WIB_IPFE/src/utils/utils.cpp",
+  "file": "/root/gozya/WIB_IPFE/src/utils/utils.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/unit_test/test_ibbe.cpp.o -c /root/gozya/WIB_IPFE/unit_test/test_ibbe.cpp",
+  "file": "/root/gozya/WIB_IPFE/unit_test/test_ibbe.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/cc -I/root/gozya/WIB_IPFE/include  -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/cjson/cJSON.c.o -c /root/gozya/WIB_IPFE/cjson/cJSON.c",
+  "file": "/root/gozya/WIB_IPFE/cjson/cJSON.c"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/policy_resolution/policy_resolution.cpp.o -c /root/gozya/WIB_IPFE/policy_resolution/policy_resolution.cpp",
+  "file": "/root/gozya/WIB_IPFE/policy_resolution/policy_resolution.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/policy_generation/policy_generation.cpp.o -c /root/gozya/WIB_IPFE/policy_generation/policy_generation.cpp",
+  "file": "/root/gozya/WIB_IPFE/policy_generation/policy_generation.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/data_structure/multiway_tree.cpp.o -c /root/gozya/WIB_IPFE/data_structure/multiway_tree.cpp",
+  "file": "/root/gozya/WIB_IPFE/data_structure/multiway_tree.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/data_structure/binary_tree.cpp.o -c /root/gozya/WIB_IPFE/data_structure/binary_tree.cpp",
+  "file": "/root/gozya/WIB_IPFE/data_structure/binary_tree.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/data_structure/access_structure.cpp.o -c /root/gozya/WIB_IPFE/data_structure/access_structure.cpp",
+  "file": "/root/gozya/WIB_IPFE/data_structure/access_structure.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/data_structure/element_t_matrix.cpp.o -c /root/gozya/WIB_IPFE/data_structure/element_t_matrix.cpp",
+  "file": "/root/gozya/WIB_IPFE/data_structure/element_t_matrix.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/data_structure/element_t_vector.cpp.o -c /root/gozya/WIB_IPFE/data_structure/element_t_vector.cpp",
+  "file": "/root/gozya/WIB_IPFE/data_structure/element_t_vector.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/data_structure/num_vector.cpp.o -c /root/gozya/WIB_IPFE/data_structure/num_vector.cpp",
+  "file": "/root/gozya/WIB_IPFE/data_structure/num_vector.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/Ciphertext.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/Ciphertext.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_CET.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/Ciphertext_CET.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/Ciphertext_CET.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_DET.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/Ciphertext_DET.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/Ciphertext_DET.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_HCET.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/Ciphertext_HCET.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/Ciphertext_HCET.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Key.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/Key.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/Key.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/SecretKey.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/SecretKey.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/SecretKey.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Text.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/Text.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/Text.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/abe_ciphertext.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/abe_ciphertext.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/abe_ciphertext.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/abe_key.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/abe_key.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/abe_key.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/sar_kgc.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/sar_kgc.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/sar_kgc.cpp"
+},
+{
+  "directory": "/root/gozya/WIB_IPFE/build",
+  "command": "/usr/bin/c++ -I/root/gozya/WIB_IPFE/include  -std=c++17 -pthread -mavx2 -O3 -fopenmp -g -Wunknown-pragmas -o CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/sar_tree.cpp.o -c /root/gozya/WIB_IPFE/scheme_structure/sar_tree.cpp",
+  "file": "/root/gozya/WIB_IPFE/scheme_structure/sar_tree.cpp"
+}
+]

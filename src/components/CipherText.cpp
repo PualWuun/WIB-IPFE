@@ -256,7 +256,7 @@ ElementList *CiphertextIBBE::GetC_i_1(){
     return this->C_i_1;
 };
 
-ElementList *CiphertextIBBE::GetC_i_1(){
+ElementList *CiphertextIBBE::GetC_i_2(){
     return this->C_i_2;
 };
 
@@ -294,4 +294,229 @@ CiphertextIBBE::~CiphertextIBBE(){
     element_clear(this->C_2);
     this->C_i_1 = NULL;
     this->C_i_2 = NULL;
+};
+
+//TODO: CP
+CiphertextCP::CiphertextCP(PublicKeyCP *PK, ElementList *a_c, ElementList *y, std::string policy){
+    policy_resolution pr;
+    policy_generation pg;
+    utils util;
+    
+    element_t s_c;
+    element_init_same_as(s_c, *y->At(1));
+    element_random(s_c);
+    element_init_same_as(this->c_4, *PK->GetG_2());
+    element_pow_zn(this->c_4, *PK->GetG_2(), s_c);
+
+    element_t sample_element;
+    element_init_same_as(sample_element, s_c);
+    element_random(sample_element);
+
+    this->policy = policy;
+
+    // compute access structure
+    multiway_tree *T = pr.ThresholdExpressionToMultiwayTree(policy, sample_element);
+    pg.generatePolicyInMultiwayTreeForm(T, s_c);
+
+    // compute c_1
+    this->c_1 = new std::vector<element_t>(y->len());
+    element_t tmp1, tmp2;
+    element_init_same_as(tmp1, *PK->GetE_g1_g2());
+    element_init_same_as(tmp2, *PK->GetE_g1_g2());
+    element_set1(tmp2);
+    for(int i = 0; i < y->len(); i++){
+        element_init_same_as(this->c_1->at(i), *PK->GetE_g1_g2());
+        element_pow_zn(this->c_1->at(i), this->c_1->at(i), *y->At(i+1));
+        for(int j =  1; j <= y->len(); j++){
+            element_pow_zn(tmp1, *PK->GetE_g1_g2_sk_F_i_j(i,j), *a_c->At(j));
+            element_mul(tmp2, tmp1, tmp2);
+        }
+        element_pow_zn(tmp2, tmp2, s_c);
+        element_mul(this->c_1->at(i), this->c_1->at(i), tmp2);
+        element_set1(tmp2);
+    }
+
+    //compute c_2, c_3 and c_5
+    this->c_2 = new std::vector<element_t>;
+    this->c_3 = new std::vector<element_t>;
+    this->c_5 = new std::vector<element_t>;
+
+    queue<multiway_tree_node*> q;
+    q.push(T->getRoot());
+    while (!q.empty()) {
+        if (q.front()->getType() == multiway_tree_node::LEAF) {
+            // get qc
+            element_t qc;
+            element_init_same_as(qc, s_c);
+            element_set(qc, q.front()->getValue());
+
+            // get attribute
+            string att = q.front()->getName();
+
+            // compute Hash(attribute)
+            element_t H1_att, H2_att;
+            element_init_same_as(H1_att, *PK->GetG_1());
+            element_init_same_as(H2_att, *PK->GetG_2());
+            element_set(H1_att, util.stringToElementT(att, *PK->GetG_1()));
+            element_set(H2_att, util.stringToElementT(att, *PK->GetG_2()));
+            
+            //compute c_2
+            element_t tmp3;
+            element_init_same_as(tmp3, *PK->GetG_1());
+            element_pow_zn(tmp3, *PK->GetG_1(), qc);
+            //this->c_2->push_back(tmp3);
+            element_clear(tmp3);
+
+            //compute c_3
+            element_t tmp4;
+            element_init_same_as(tmp4, *PK->GetG_2());
+            element_pow_zn(tmp4, H2_att, qc);
+            element_clear(tmp4);
+
+            //compute c_5
+            element_t tmp5;
+            element_init_same_as(tmp5, *PK->GetG_1());
+            element_pow_zn(tmp5, H1_att, qc);
+            //this->c_5->push_back(tmp5);
+            element_clear(tmp5);
+        }
+        if (q.front()->getFirstChild() != NULL) {
+            multiway_tree_node* child = q.front()->getFirstChild();
+            while (NULL != child) {
+                q.push(child);
+                child = child->getNextSibling();
+            }
+        }
+        q.pop();
+    }
+
+    element_clear(s_c);
+    element_clear(sample_element);
+    element_clear(tmp1);
+    element_clear(tmp2);
+};
+
+
+access_structure *CiphertextCP::getAccessStructure(){
+    return this->A;
+};
+
+void CiphertextCP::setPolicy(string policy){
+    this->policy = policy;
+};
+
+string CiphertextCP::getPolicy(){
+    return this->policy;
+};
+
+element_t *CiphertextCP::GetC_4(){
+    return &this->c_4;
+};
+
+std::vector<element_t> *CiphertextCP::GetC_1(){
+    return this->c_1;
+};
+
+element_t *CiphertextCP::GetC_1_i(int i){
+    return &this->c_1->at(i);
+};
+
+std::vector<element_t> *CiphertextCP::GetC_2(){
+    return this->c_2;
+};
+
+element_t *CiphertextCP::GetC_2_i(int i){
+    return &this->c_2->at(i);
+};
+    
+std::vector<element_t> *CiphertextCP::GetC_3(){
+    return this->c_3;
+};
+
+element_t *CiphertextCP::GetC_3_i(int i){
+    return &this->c_3->at(i);
+};
+    
+std::vector<element_t> *CiphertextCP::GetC_5(){
+    return this->c_5;
+};
+
+element_t *CiphertextCP::GetC_5_i(int i){
+    return &this->c_5->at(i);
+};
+
+std::string CiphertextCP::toString(){
+    int buflen = 1024;
+    char buf[buflen];
+    std::string res = "CipherTextCP类\n", tmp;
+
+    res += "c_1\n";
+    for(int i = 0; i < (int) c_1->size(); i++){
+        res += std::to_string(i + 1) + ": ";
+        element_snprint(buf, buflen, this->c_1->at(i));
+        tmp = buf;
+        res += tmp + "\n";
+    }
+
+    res += "c_2\n";
+    for(int i = 0; i < (int) c_2->size(); i++){
+        res += std::to_string(i + 1) + ": ";
+        element_snprint(buf, buflen, this->c_2->at(i));
+        tmp = buf;
+        res += tmp + "\n";
+    }
+
+    res += "c_3\n";
+    for(int i = 0; i < (int) c_3->size(); i++){
+        res += std::to_string(i + 1) + ": ";
+        element_snprint(buf, buflen, this->c_3->at(i));
+        tmp = buf;
+        res += tmp + "\n";
+    }
+
+    element_snprint(buf, buflen, *this->GetC_4());
+    tmp = buf;
+    res += "c_4: " + tmp + "\n";
+
+    res += "c_5\n";
+    for(int i = 0; i < (int) c_5->size(); i++){
+        res += std::to_string(i + 1) + ": ";
+        element_snprint(buf, buflen, this->c_5->at(i));
+        tmp = buf;
+        res += tmp + "\n";
+    }
+
+    return res;
+};
+
+CiphertextCP::~CiphertextCP(){
+    element_clear(this->c_4);
+    if(this->c_1 != NULL){
+        for(int i = 0; i < (int) c_1->size(); i++){
+            element_clear(this->c_1->at(i));
+        }
+        this->c_1->clear();
+        delete this->c_1;
+    }
+    if(this->c_2 != NULL){
+        for(int i = 0; i < (int) c_2->size(); i++){
+            element_clear(this->c_2->at(i));
+        }
+        this->c_2->clear();
+        delete this->c_2;
+    }
+    if(this->c_3 != NULL){
+        for(int i = 0; i < (int) c_3->size(); i++){
+            element_clear(this->c_3->at(i));
+        }
+        this->c_3->clear();
+        delete this->c_3;
+    }
+    if(this->c_5 != NULL){
+        for(int i = 0; i < (int) c_5->size(); i++){
+            element_clear(this->c_5->at(i));
+        }
+        this->c_5->clear();
+        delete this->c_5;
+    }
 };

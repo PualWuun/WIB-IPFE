@@ -5,6 +5,8 @@
 #include <ibe/ElementList.h>
 #include <ibe/PublicKey.h>
 #include "ibe/HIDparam.h"
+#include "../data_structure/data_structure.h"
+#include "../utils/utils.h"
 
 class CipherTextSong {
     private:
@@ -72,7 +74,7 @@ public:
 
     ElementList *GetC_i_1();
 
-    ElementList *GetC_i_1();
+    ElementList *GetC_i_2();
 
     element_t *GetC_i_1_i(int i);
 
@@ -83,4 +85,43 @@ public:
     ~CiphertextIBBE();
 };
 
+class CiphertextCP{
+private:
+    element_t c_4;
+    std::vector<element_t> *c_1, *c_2, *c_3, *c_5;
+
+    std::string policy;
+    access_structure *A;
+
+public:
+    CiphertextCP(PublicKeyCP *PK, ElementList *a_c, ElementList *y, std::string policy);
+
+    access_structure* getAccessStructure();
+
+    void setPolicy(string policy);
+
+    string getPolicy();
+
+    element_t *GetC_4();
+
+    std::vector<element_t> *GetC_1();
+
+    element_t *GetC_1_i(int i);
+
+    std::vector<element_t> *GetC_2();
+
+    element_t *GetC_2_i(int i);
+    
+    std::vector<element_t> *GetC_3();
+
+    element_t *GetC_3_i(int i);
+    
+    std::vector<element_t> *GetC_5();
+
+    element_t *GetC_5_i(int i);
+
+    std::string toString();
+
+    ~CiphertextCP();
+};
 #endif //CIPHER_TEXT_H

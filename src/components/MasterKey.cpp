@@ -164,3 +164,73 @@ MasterKeyIBBE::~MasterKeyIBBE(){
     element_clear(this->n_2);
     this->beta = NULL;
 };
+
+//TODO: CP
+MasterKeyCP::MasterKeyCP(int n, pairing_t &pairing){
+    element_init_G1(this->g_1, pairing);
+    element_init_G2(this->g_2, pairing);
+    element_random(this->g_1);
+    element_random(this->g_2);
+    element_init_GT(this->eg_1g_2, pairing);
+    element_pairing(this->eg_1g_2, this->g_1, this->g_2);
+    element_init_Zr(this->s_k, pairing);
+    element_random(this->s_k);
+    this->n = n;
+    
+    this->F = std::vector<ElementList *>(n);
+    for(int i = 0; i < n; i++){
+        this->F[i] = new ElementList(n - i, 0, this->s_k, true);    //F[i] -> [1, n-i]: n-1 elements
+    }
+};
+
+element_t *MasterKeyCP::GetS_k(){
+    return &this->s_k;
+};
+
+element_t *MasterKeyCP::GetG_1(){
+    return &this->g_1;
+};
+
+element_t *MasterKeyCP::GetG_2(){
+    return &this->g_2;
+};
+
+element_t *MasterKeyCP::GetE_g1_g2(){
+    return &this->eg_1g_2;
+};
+
+ElementList *MasterKeyCP::GetF_i(int i){
+    return this->F[i];
+};
+
+element_t *MasterKeyCP::GetF_i_j(int i, int j){
+    if(i > j){
+        return this->F[j]->At(i);
+    }
+    return this->F[i]->At(j);
+};
+
+std::string MasterKeyCP::toString(){
+    int buflen = 1024;
+    char buf[buflen];
+    std::string res = "MasterKeyCP类\n", tmp;
+    element_snprint(buf, buflen, *this->GetS_k());
+    tmp = buf;
+    res += "s_k: " + tmp + "\n";
+    
+    for(int i = 0; i < this->n; i++){
+        res += this->F[i]->toString(std::to_string(i + 1), "F_i");
+        res += "\n";
+    }
+    return res;
+};
+
+MasterKeyCP::~MasterKeyCP(){
+    element_clear(this->s_k);
+    for(int i = 0; i < this->n; i++){
+        if(this->F[i] != NULL){
+            delete this->F[i];
+            this->F[i] = NULL;
+        }
+    }
+};

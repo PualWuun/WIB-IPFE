@@ -76,7 +76,6 @@ class PublicKeyIBBE{
 private:
     element_t h, g, g_n_1_alpha, g_r_2_n_2, egh;
     ElementList *g_n_1_alpha_beta, *h_r_1_alpha, *h_beta;
-    long long c_res[50][50] = {0};
 
 public:
     PublicKeyIBBE(int n, pairing_t &pairing, MasterKeyIBBE *MSK);
@@ -103,11 +102,33 @@ public:
 
     element_t *GetH_beta_i(int i);
 
-    long long C(int s, int i);
-
     std::string toString();
 
     ~PublicKeyIBBE();
 
+};
+
+//TODO: CP
+class PublicKeyCP{
+private:
+    int n;
+    element_t g_1, g_2, eg_1g_2;
+    std::vector<ElementList *> eg_1g_2_s_kF;
+public:
+    PublicKeyCP(int n, pairing_t &pairing, MasterKeyCP *MSK);
+
+    element_t *GetG_1();
+
+    element_t *GetG_2();
+
+    element_t *GetE_g1_g2();
+
+    ElementList *GetE_g1_g2_sk_F_i(int i);
+
+    element_t *GetE_g1_g2_sk_F_i_j(int i, int j);
+
+    std::string toString();
+
+    ~PublicKeyCP();
 };
 #endif // PUBLIC_KEY_H

@@ -38,7 +38,7 @@ class IBBE_PK_IPFE {
 
     CiphertextIBBE *Encrypt(PublicKeyIBBE *PK, ElementList *S, ElementList *x);
 
-    SecretKeyIBBE *KeyGen(PublicKeyIBBE *PK, MasterKeyIBBE *MSK, element_t &ID, ElementList *y);
+    SecretKeyIBBE *KeyGen(PublicKeyIBBE *PK, element_t *ID, ElementList *y);
 
     element_t *Decrypt(CiphertextIBBE *CT, ElementList *S, SecretKeyIBBE *SK, PublicKeyIBBE *PK);
 

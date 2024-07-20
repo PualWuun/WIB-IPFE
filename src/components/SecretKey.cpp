@@ -383,11 +383,11 @@ SecretKeyWIB::SecretKeyWIB(PublicKeyWIB *PK, SecretKeyWIB *SK, ElementList *P_ne
     };
 
 //TODO: IBBE
-SecretKeyIBBE::SecretKeyIBBE(PublicKeyIBBE *PK, MasterKeyIBBE *MSK, element_t ID, ElementList *y){
+SecretKeyIBBE::SecretKeyIBBE(PublicKeyIBBE *PK, MasterKeyIBBE *MSK, element_t *ID, ElementList *y){
     this->y = new ElementList(y, 0);
     int n = y->len();
     element_init_same_as(this->ID, *MSK->GetAlpha());
-    element_set(this->ID, ID);
+    element_set(this->ID, *ID);
     element_init_same_as(this->K_1, *PK->GetG());
     element_init_same_as(this->K_2, *MSK->GetAlpha());
     
@@ -407,7 +407,7 @@ SecretKeyIBBE::SecretKeyIBBE(PublicKeyIBBE *PK, MasterKeyIBBE *MSK, element_t ID
     element_pow_zn(this->K_1, *PK->GetG(), res1);
     element_div(this->K_1, this->K_1, this->K_2);   //g^{<beta, y> - k}
     element_pow_zn(this->K_1, this->K_2, *MSK->GetN_1());
-    element_sub(tmp, tmp, ID);  //(a-H(ID))
+    element_sub(tmp, tmp, *ID);  //(a-H(ID))
     element_pow_zn(this->K_1, this->K_1, tmp);
 
     element_clear(tmp);
@@ -451,4 +451,151 @@ SecretKeyIBBE::~SecretKeyIBBE(){
     element_clear(this->ID);
     element_clear(this->K_1);
     element_clear(this->K_2);
+};
+
+SecretKeyCP::SecretKeyCP(MasterKeyCP *MSK, ElementList *x, ElementList *a_k, std::vector<std::string> *attributes){
+    element_t tmp;
+    utils util;
+    element_init_same_as(tmp, *x->At(1));
+    element_t tmp1, tmp2;
+    element_init_same_as(tmp1, tmp);
+    element_init_same_as(tmp2, tmp);
+    ElementList *sigma2 = new ElementList(x->len(), 0, tmp, true);
+    ElementList *r = new ElementList(x->len(), 0, tmp, true);
+    this->x = x;
+    element_t res1;
+    element_init_same_as(res1, *MSK->GetG_1());
+    this->sk_1 = new std::vector<element_t>(x->len());
+    this->sk_2 = new std::vector<element_t>(x->len());
+    this->sk_3 = new std::vector<element_t>(x->len());
+    this->sk_4 = new std::vector<element_t>(x->len());
+    element_set0(tmp);
+    for(int i = 0; i < x->len(); i++){
+        element_init_same_as(this->sk_1->at(i), *MSK->GetG_1());
+        element_init_same_as(this->sk_2->at(i), *MSK->GetG_1());
+        element_init_same_as(this->sk_3->at(i), *MSK->GetG_1());
+        element_init_same_as(this->sk_4->at(i), *MSK->GetG_2());
+        for(int j = 1; j <= x->len(); j++){
+            element_mul(tmp1, *a_k->At(j), *MSK->GetF_i_j(i,j));
+            element_mul(tmp1, tmp1, *x->At(j));
+            element_add(tmp, tmp, tmp1);
+        }
+        element_t qj;
+        element_init_same_as(qj, tmp);
+        element_set(qj, util.stringToElementT(attributes->at(i), tmp));
+        element_t sigma1;
+        element_init_same_as(sigma1, tmp);
+        element_random(sigma1);
+        element_add(tmp, tmp, sigma1);
+        element_pow_zn(this->sk_1->at(i), *MSK->GetG_1(), tmp);
+        element_pow_zn(this->sk_1->at(i), this->sk_1->at(i), qj);
+
+        // compute Hash(attribute)
+        string att = attributes->at(i);
+        element_t H1_att, H2_att;
+        element_init_same_as(H1_att, *MSK->GetG_1());
+        element_init_same_as(H2_att, *MSK->GetG_2());
+        element_set(H1_att, util.stringToElementT(att, *MSK->GetG_1()));
+        element_set(H2_att, util.stringToElementT(att, *MSK->GetG_2()));
+
+        element_pow_zn(res1, H1_att, *sigma2->At(i+1));
+        element_mul(this->sk_1->at(i), this->sk_1->at(i), res1);
+        element_pow_zn(this->sk_4->at(i), *MSK->GetG_2(), *sigma2->At(i+1));
+        element_pow_zn(this->sk_2->at(i), H2_att, *r->At(i));
+        element_pow_zn(this->sk_3->at(i), *MSK->GetG_1(), *r->At(i));
+
+        element_t tmp3;
+        element_init_same_as(tmp3, *MSK->GetG_2());
+        element_pow_zn(tmp3, *MSK->GetG_2(), sigma1);
+        element_pow_zn(tmp3, tmp3, qj);
+
+        element_clear(tmp3);
+        element_clear(sigma1);
+        element_clear(H1_att);
+        element_clear(H2_att);
+        element_clear(qj);
+    }
+    element_clear(tmp);
+    element_clear(tmp1);
+    element_clear(tmp2);
+    delete r;
+    delete sigma2;
+};
+
+std::vector<element_t> *SecretKeyCP::GetSK_1(){
+    return this->sk_1;
+};
+
+ElementList *SecretKeyCP::GetX(){
+    return this->x;
+};
+
+element_t *SecretKeyCP::GetSK_1_i(int i){
+    return &this->sk_1->at(i);
+};
+
+std::vector<element_t> *SecretKeyCP::GetSK_2(){
+    return this->sk_2;
+};
+
+element_t *SecretKeyCP::GetSK_2_i(int i){
+    return &this->sk_2->at(i);
+};
+
+std::vector<element_t> *SecretKeyCP::GetSK_3(){
+    return this->sk_3;
+};
+
+element_t *SecretKeyCP::GetSK_3_i(int i){
+    return &this->sk_3->at(i);
+};
+
+std::vector<element_t> *SecretKeyCP::GetSK_4(){
+    return this->sk_4;
+};
+
+element_t *SecretKeyCP::GetSK_4_i(int i){
+    return &this->sk_4->at(i);
+};
+
+std::string SecretKeyCP::toSting(){
+    int buflen = 1024;
+    char buf[buflen];
+    std::string res = "SecretKeyCP类\n", tmp;
+    for(int i = 0; i < (int) this->sk_1->size(); i++){
+        element_snprint(buf, buflen, this->sk_1->at(i));
+        tmp = buf;
+        res += "sk_1_: " + i;
+        res += "\n";
+    }
+
+    for(int i = 0; i < (int) this->sk_2->size(); i++){
+        element_snprint(buf, buflen, this->sk_2->at(i));
+        tmp = buf;
+        res += "sk_2_: " + i;
+        res += "\n";
+    }
+
+    for(int i = 0; i < (int) this->sk_3->size(); i++){
+        element_snprint(buf, buflen, this->sk_3->at(i));
+        tmp = buf;
+        res += "sk_3_: " + i;
+        res += "\n";
+    }
+
+    for(int i = 0; i < (int) this->sk_4->size(); i++){
+        element_snprint(buf, buflen, this->sk_4->at(i));
+        tmp = buf;
+        res += "sk_4_: " + i;
+        res += "\n";
+    }
+
+    return res;
+};
+
+SecretKeyCP::~SecretKeyCP(){
+    if(this->sk_1 != NULL)  delete this->sk_1;
+    if(this->sk_2 != NULL)  delete this->sk_2;
+    if(this->sk_3 != NULL)  delete this->sk_3;
+    if(this->sk_4 != NULL)  delete this->sk_4;
 };

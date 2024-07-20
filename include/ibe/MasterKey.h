@@ -4,6 +4,7 @@
 #include <pbc/pbc.h>
 #include <ibe/ElementList.h>
 #include <string>
+#include <vector>
 
 class MasterKey
 {
@@ -74,4 +75,33 @@ public:
     ~MasterKeyIBBE();
 };
 
+
+class MasterKeyCP{
+private:
+    int n;
+    element_t s_k, g_1, g_2, eg_1g_2;
+    std::vector<ElementList *> F;
+    /* 1 2 3
+       - 4 5
+       - - 6*/
+
+public:
+    MasterKeyCP(int n, pairing_t &pairing);
+
+    element_t *GetS_k();
+
+    element_t *GetG_1();
+
+    element_t *GetG_2();
+
+    element_t *GetE_g1_g2();
+
+    ElementList *GetF_i(int i);
+
+    element_t *GetF_i_j(int i, int j);
+
+    std::string toString();
+
+    ~MasterKeyCP();
+};
 #endif // MASTER_KEY_H

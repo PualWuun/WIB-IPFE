@@ -71,7 +71,7 @@ CiphertextIBBE *IBBE_PK_IPFE::Encrypt(PublicKeyIBBE *PK, ElementList *S, Element
     return new CiphertextIBBE(PK, S, x);
 };
 
-SecretKeyIBBE *IBBE_PK_IPFE::KeyGen(PublicKeyIBBE *PK, MasterKeyIBBE *MSK, element_t &ID, ElementList *y){
+SecretKeyIBBE *IBBE_PK_IPFE::KeyGen(PublicKeyIBBE *PK, element_t *ID, ElementList *y){
     return new SecretKeyIBBE(this->PK, this->MSK, ID, y);
 };
 

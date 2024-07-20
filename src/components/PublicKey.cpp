@@ -252,20 +252,6 @@ element_t *PublicKeyIBBE::GetH_beta_i(int i){
     return this->h_beta->At(i);
 };
 
-long long PublicKeyIBBE::C(int s, int i){
-    if(s > 50 || s < 1 || i > s || i < 0){
-        throw "Illegal s or i";
-    }
-    if(s == 0 || s == i){
-        return 1;
-    }
-    if(this->c_res[s][i] != 0){
-        return c_res[s][i];
-    }
-    this->c_res[s][i] = C(s - 1, i) + C(s - 1, i - 1);
-    return this->c_res[s][i];
-};
-
 std::string PublicKeyIBBE::toString(){
     int buflen = 1024;
     char buf[buflen];
@@ -297,4 +283,80 @@ PublicKeyIBBE::~PublicKeyIBBE(){
     element_clear(this->g);
     element_clear(this->g_n_1_alpha);
     element_clear(this->g_r_2_n_2);
+};
+
+//TODO: CP
+PublicKeyCP::PublicKeyCP(int n, pairing_t &pairing, MasterKeyCP *MSK){
+    this->n = n;
+    element_init_G1(this->g_1, pairing);
+    element_init_G2(this->g_2, pairing);
+    element_init_GT(this->eg_1g_2, pairing);
+    element_set(this->g_1, *MSK->GetG_1());
+    element_set(this->g_2, *MSK->GetG_2());
+    element_set(this->eg_1g_2, *MSK->GetE_g1_g2());
+
+    element_t tmp;
+    element_init_same_as(tmp, *MSK->GetS_k());
+    for(int i = 0; i < n; i++){
+        this->eg_1g_2_s_kF[i] = new ElementList(n - i, 0, this->eg_1g_2, false);
+        for(int j = 1; j <= n -i ; j++){
+            element_mul(tmp, *MSK->GetS_k(), *MSK->GetF_i_j(i, j));
+            element_pow_zn(*this->eg_1g_2_s_kF[i]->At(j), this->eg_1g_2, tmp);
+        }
+    }
+    element_clear(tmp);
+};
+
+element_t *PublicKeyCP::GetG_1(){
+    return &this->g_1;
+};
+
+element_t *PublicKeyCP::GetG_2(){
+    return &this->g_2;
+};
+
+element_t *PublicKeyCP::GetE_g1_g2(){
+    return &this->eg_1g_2;
+};  
+
+ElementList *PublicKeyCP::GetE_g1_g2_sk_F_i(int i){
+    return this->eg_1g_2_s_kF[i];
+};
+
+element_t *PublicKeyCP::GetE_g1_g2_sk_F_i_j(int i, int j){
+    if(i > j){
+        return this->eg_1g_2_s_kF[j]->At(i);
+    }
+    return this->eg_1g_2_s_kF[i]->At(j);
+};
+
+std::string PublicKeyCP::toString(){
+    int buflen = 1024;
+    char buf[buflen];
+    std::string res = "PublicKeyCP类\n", tmp;
+    element_snprint(buf, buflen, *this->GetG_1());
+    tmp = buf;
+    res += "g_1: " + tmp + "\n";
+
+    element_snprint(buf, buflen, *this->GetG_2());
+    tmp = buf;
+    res += "g_2: " + tmp + "\n";
+
+    for(int i = 0; i < this->n; i++){
+        res += this->eg_1g_2_s_kF[i]->toString(std::to_string(i + 1), "e_g1_g2_sk_F_i");
+        res += "\n";
+    }
+    return res;
+};
+
+PublicKeyCP::~PublicKeyCP(){
+    element_clear(this->g_1);
+    element_clear(this->g_2);
+    element_clear(this->eg_1g_2);
+    for(int i = 0; i < this->n; i++){
+        if(this->eg_1g_2_s_kF[i] != NULL){
+            delete eg_1g_2_s_kF[i];
+            eg_1g_2_s_kF[i] = NULL;
+        }
+    }
 };

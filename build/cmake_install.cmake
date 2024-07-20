@@ -1,4 +1,4 @@
-# Install script for directory: /root/wugy/crypto/WIB_IPFE
+# Install script for directory: /root/gozya/WIB_IPFE
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/wugy/crypto/WIB_IPFE/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/root/gozya/WIB_IPFE/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/wugy/crypto/WIB_IPFE
+CMAKE_SOURCE_DIR = /root/gozya/WIB_IPFE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/wugy/crypto/WIB_IPFE/build
+CMAKE_BINARY_DIR = /root/gozya/WIB_IPFE/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/wugy/crypto/WIB_IPFE/build/CMakeFiles /root/wugy/crypto/WIB_IPFE/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/gozya/WIB_IPFE/build/CMakeFiles /root/gozya/WIB_IPFE/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/wugy/crypto/WIB_IPFE/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/gozya/WIB_IPFE/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,38 +117,504 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named IPFE_test
+# Target rules for targets named IPFE_test_ibbe
 
 # Build rule for target.
-IPFE_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 IPFE_test
-.PHONY : IPFE_test
+IPFE_test_ibbe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 IPFE_test_ibbe
+.PHONY : IPFE_test_ibbe
 
 # fast build rule for target.
-IPFE_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/build
-.PHONY : IPFE_test/fast
+IPFE_test_ibbe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/build
+.PHONY : IPFE_test_ibbe/fast
 
-#=============================================================================
-# Target rules for targets named IPFE_test_wib
+cjson/cJSON.o: cjson/cJSON.c.o
+.PHONY : cjson/cJSON.o
 
-# Build rule for target.
-IPFE_test_wib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 IPFE_test_wib
-.PHONY : IPFE_test_wib
+# target to build an object file
+cjson/cJSON.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/cjson/cJSON.c.o
+.PHONY : cjson/cJSON.c.o
 
-# fast build rule for target.
-IPFE_test_wib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/build
-.PHONY : IPFE_test_wib/fast
+cjson/cJSON.i: cjson/cJSON.c.i
+.PHONY : cjson/cJSON.i
+
+# target to preprocess a source file
+cjson/cJSON.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/cjson/cJSON.c.i
+.PHONY : cjson/cJSON.c.i
+
+cjson/cJSON.s: cjson/cJSON.c.s
+.PHONY : cjson/cJSON.s
+
+# target to generate assembly for a file
+cjson/cJSON.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/cjson/cJSON.c.s
+.PHONY : cjson/cJSON.c.s
+
+data_structure/access_structure.o: data_structure/access_structure.cpp.o
+.PHONY : data_structure/access_structure.o
+
+# target to build an object file
+data_structure/access_structure.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/access_structure.cpp.o
+.PHONY : data_structure/access_structure.cpp.o
+
+data_structure/access_structure.i: data_structure/access_structure.cpp.i
+.PHONY : data_structure/access_structure.i
+
+# target to preprocess a source file
+data_structure/access_structure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/access_structure.cpp.i
+.PHONY : data_structure/access_structure.cpp.i
+
+data_structure/access_structure.s: data_structure/access_structure.cpp.s
+.PHONY : data_structure/access_structure.s
+
+# target to generate assembly for a file
+data_structure/access_structure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/access_structure.cpp.s
+.PHONY : data_structure/access_structure.cpp.s
+
+data_structure/binary_tree.o: data_structure/binary_tree.cpp.o
+.PHONY : data_structure/binary_tree.o
+
+# target to build an object file
+data_structure/binary_tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/binary_tree.cpp.o
+.PHONY : data_structure/binary_tree.cpp.o
+
+data_structure/binary_tree.i: data_structure/binary_tree.cpp.i
+.PHONY : data_structure/binary_tree.i
+
+# target to preprocess a source file
+data_structure/binary_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/binary_tree.cpp.i
+.PHONY : data_structure/binary_tree.cpp.i
+
+data_structure/binary_tree.s: data_structure/binary_tree.cpp.s
+.PHONY : data_structure/binary_tree.s
+
+# target to generate assembly for a file
+data_structure/binary_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/binary_tree.cpp.s
+.PHONY : data_structure/binary_tree.cpp.s
+
+data_structure/element_t_matrix.o: data_structure/element_t_matrix.cpp.o
+.PHONY : data_structure/element_t_matrix.o
+
+# target to build an object file
+data_structure/element_t_matrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/element_t_matrix.cpp.o
+.PHONY : data_structure/element_t_matrix.cpp.o
+
+data_structure/element_t_matrix.i: data_structure/element_t_matrix.cpp.i
+.PHONY : data_structure/element_t_matrix.i
+
+# target to preprocess a source file
+data_structure/element_t_matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/element_t_matrix.cpp.i
+.PHONY : data_structure/element_t_matrix.cpp.i
+
+data_structure/element_t_matrix.s: data_structure/element_t_matrix.cpp.s
+.PHONY : data_structure/element_t_matrix.s
+
+# target to generate assembly for a file
+data_structure/element_t_matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/element_t_matrix.cpp.s
+.PHONY : data_structure/element_t_matrix.cpp.s
+
+data_structure/element_t_vector.o: data_structure/element_t_vector.cpp.o
+.PHONY : data_structure/element_t_vector.o
+
+# target to build an object file
+data_structure/element_t_vector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/element_t_vector.cpp.o
+.PHONY : data_structure/element_t_vector.cpp.o
+
+data_structure/element_t_vector.i: data_structure/element_t_vector.cpp.i
+.PHONY : data_structure/element_t_vector.i
+
+# target to preprocess a source file
+data_structure/element_t_vector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/element_t_vector.cpp.i
+.PHONY : data_structure/element_t_vector.cpp.i
+
+data_structure/element_t_vector.s: data_structure/element_t_vector.cpp.s
+.PHONY : data_structure/element_t_vector.s
+
+# target to generate assembly for a file
+data_structure/element_t_vector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/element_t_vector.cpp.s
+.PHONY : data_structure/element_t_vector.cpp.s
+
+data_structure/multiway_tree.o: data_structure/multiway_tree.cpp.o
+.PHONY : data_structure/multiway_tree.o
+
+# target to build an object file
+data_structure/multiway_tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/multiway_tree.cpp.o
+.PHONY : data_structure/multiway_tree.cpp.o
+
+data_structure/multiway_tree.i: data_structure/multiway_tree.cpp.i
+.PHONY : data_structure/multiway_tree.i
+
+# target to preprocess a source file
+data_structure/multiway_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/multiway_tree.cpp.i
+.PHONY : data_structure/multiway_tree.cpp.i
+
+data_structure/multiway_tree.s: data_structure/multiway_tree.cpp.s
+.PHONY : data_structure/multiway_tree.s
+
+# target to generate assembly for a file
+data_structure/multiway_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/multiway_tree.cpp.s
+.PHONY : data_structure/multiway_tree.cpp.s
+
+data_structure/num_vector.o: data_structure/num_vector.cpp.o
+.PHONY : data_structure/num_vector.o
+
+# target to build an object file
+data_structure/num_vector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/num_vector.cpp.o
+.PHONY : data_structure/num_vector.cpp.o
+
+data_structure/num_vector.i: data_structure/num_vector.cpp.i
+.PHONY : data_structure/num_vector.i
+
+# target to preprocess a source file
+data_structure/num_vector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/num_vector.cpp.i
+.PHONY : data_structure/num_vector.cpp.i
+
+data_structure/num_vector.s: data_structure/num_vector.cpp.s
+.PHONY : data_structure/num_vector.s
+
+# target to generate assembly for a file
+data_structure/num_vector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/data_structure/num_vector.cpp.s
+.PHONY : data_structure/num_vector.cpp.s
+
+policy_generation/policy_generation.o: policy_generation/policy_generation.cpp.o
+.PHONY : policy_generation/policy_generation.o
+
+# target to build an object file
+policy_generation/policy_generation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/policy_generation/policy_generation.cpp.o
+.PHONY : policy_generation/policy_generation.cpp.o
+
+policy_generation/policy_generation.i: policy_generation/policy_generation.cpp.i
+.PHONY : policy_generation/policy_generation.i
+
+# target to preprocess a source file
+policy_generation/policy_generation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/policy_generation/policy_generation.cpp.i
+.PHONY : policy_generation/policy_generation.cpp.i
+
+policy_generation/policy_generation.s: policy_generation/policy_generation.cpp.s
+.PHONY : policy_generation/policy_generation.s
+
+# target to generate assembly for a file
+policy_generation/policy_generation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/policy_generation/policy_generation.cpp.s
+.PHONY : policy_generation/policy_generation.cpp.s
+
+policy_resolution/policy_resolution.o: policy_resolution/policy_resolution.cpp.o
+.PHONY : policy_resolution/policy_resolution.o
+
+# target to build an object file
+policy_resolution/policy_resolution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/policy_resolution/policy_resolution.cpp.o
+.PHONY : policy_resolution/policy_resolution.cpp.o
+
+policy_resolution/policy_resolution.i: policy_resolution/policy_resolution.cpp.i
+.PHONY : policy_resolution/policy_resolution.i
+
+# target to preprocess a source file
+policy_resolution/policy_resolution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/policy_resolution/policy_resolution.cpp.i
+.PHONY : policy_resolution/policy_resolution.cpp.i
+
+policy_resolution/policy_resolution.s: policy_resolution/policy_resolution.cpp.s
+.PHONY : policy_resolution/policy_resolution.s
+
+# target to generate assembly for a file
+policy_resolution/policy_resolution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/policy_resolution/policy_resolution.cpp.s
+.PHONY : policy_resolution/policy_resolution.cpp.s
+
+scheme_structure/Ciphertext.o: scheme_structure/Ciphertext.cpp.o
+.PHONY : scheme_structure/Ciphertext.o
+
+# target to build an object file
+scheme_structure/Ciphertext.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext.cpp.o
+.PHONY : scheme_structure/Ciphertext.cpp.o
+
+scheme_structure/Ciphertext.i: scheme_structure/Ciphertext.cpp.i
+.PHONY : scheme_structure/Ciphertext.i
+
+# target to preprocess a source file
+scheme_structure/Ciphertext.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext.cpp.i
+.PHONY : scheme_structure/Ciphertext.cpp.i
+
+scheme_structure/Ciphertext.s: scheme_structure/Ciphertext.cpp.s
+.PHONY : scheme_structure/Ciphertext.s
+
+# target to generate assembly for a file
+scheme_structure/Ciphertext.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext.cpp.s
+.PHONY : scheme_structure/Ciphertext.cpp.s
+
+scheme_structure/Ciphertext_CET.o: scheme_structure/Ciphertext_CET.cpp.o
+.PHONY : scheme_structure/Ciphertext_CET.o
+
+# target to build an object file
+scheme_structure/Ciphertext_CET.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_CET.cpp.o
+.PHONY : scheme_structure/Ciphertext_CET.cpp.o
+
+scheme_structure/Ciphertext_CET.i: scheme_structure/Ciphertext_CET.cpp.i
+.PHONY : scheme_structure/Ciphertext_CET.i
+
+# target to preprocess a source file
+scheme_structure/Ciphertext_CET.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_CET.cpp.i
+.PHONY : scheme_structure/Ciphertext_CET.cpp.i
+
+scheme_structure/Ciphertext_CET.s: scheme_structure/Ciphertext_CET.cpp.s
+.PHONY : scheme_structure/Ciphertext_CET.s
+
+# target to generate assembly for a file
+scheme_structure/Ciphertext_CET.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_CET.cpp.s
+.PHONY : scheme_structure/Ciphertext_CET.cpp.s
+
+scheme_structure/Ciphertext_DET.o: scheme_structure/Ciphertext_DET.cpp.o
+.PHONY : scheme_structure/Ciphertext_DET.o
+
+# target to build an object file
+scheme_structure/Ciphertext_DET.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_DET.cpp.o
+.PHONY : scheme_structure/Ciphertext_DET.cpp.o
+
+scheme_structure/Ciphertext_DET.i: scheme_structure/Ciphertext_DET.cpp.i
+.PHONY : scheme_structure/Ciphertext_DET.i
+
+# target to preprocess a source file
+scheme_structure/Ciphertext_DET.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_DET.cpp.i
+.PHONY : scheme_structure/Ciphertext_DET.cpp.i
+
+scheme_structure/Ciphertext_DET.s: scheme_structure/Ciphertext_DET.cpp.s
+.PHONY : scheme_structure/Ciphertext_DET.s
+
+# target to generate assembly for a file
+scheme_structure/Ciphertext_DET.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_DET.cpp.s
+.PHONY : scheme_structure/Ciphertext_DET.cpp.s
+
+scheme_structure/Ciphertext_HCET.o: scheme_structure/Ciphertext_HCET.cpp.o
+.PHONY : scheme_structure/Ciphertext_HCET.o
+
+# target to build an object file
+scheme_structure/Ciphertext_HCET.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_HCET.cpp.o
+.PHONY : scheme_structure/Ciphertext_HCET.cpp.o
+
+scheme_structure/Ciphertext_HCET.i: scheme_structure/Ciphertext_HCET.cpp.i
+.PHONY : scheme_structure/Ciphertext_HCET.i
+
+# target to preprocess a source file
+scheme_structure/Ciphertext_HCET.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_HCET.cpp.i
+.PHONY : scheme_structure/Ciphertext_HCET.cpp.i
+
+scheme_structure/Ciphertext_HCET.s: scheme_structure/Ciphertext_HCET.cpp.s
+.PHONY : scheme_structure/Ciphertext_HCET.s
+
+# target to generate assembly for a file
+scheme_structure/Ciphertext_HCET.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Ciphertext_HCET.cpp.s
+.PHONY : scheme_structure/Ciphertext_HCET.cpp.s
+
+scheme_structure/Key.o: scheme_structure/Key.cpp.o
+.PHONY : scheme_structure/Key.o
+
+# target to build an object file
+scheme_structure/Key.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Key.cpp.o
+.PHONY : scheme_structure/Key.cpp.o
+
+scheme_structure/Key.i: scheme_structure/Key.cpp.i
+.PHONY : scheme_structure/Key.i
+
+# target to preprocess a source file
+scheme_structure/Key.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Key.cpp.i
+.PHONY : scheme_structure/Key.cpp.i
+
+scheme_structure/Key.s: scheme_structure/Key.cpp.s
+.PHONY : scheme_structure/Key.s
+
+# target to generate assembly for a file
+scheme_structure/Key.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Key.cpp.s
+.PHONY : scheme_structure/Key.cpp.s
+
+scheme_structure/SecretKey.o: scheme_structure/SecretKey.cpp.o
+.PHONY : scheme_structure/SecretKey.o
+
+# target to build an object file
+scheme_structure/SecretKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/SecretKey.cpp.o
+.PHONY : scheme_structure/SecretKey.cpp.o
+
+scheme_structure/SecretKey.i: scheme_structure/SecretKey.cpp.i
+.PHONY : scheme_structure/SecretKey.i
+
+# target to preprocess a source file
+scheme_structure/SecretKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/SecretKey.cpp.i
+.PHONY : scheme_structure/SecretKey.cpp.i
+
+scheme_structure/SecretKey.s: scheme_structure/SecretKey.cpp.s
+.PHONY : scheme_structure/SecretKey.s
+
+# target to generate assembly for a file
+scheme_structure/SecretKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/SecretKey.cpp.s
+.PHONY : scheme_structure/SecretKey.cpp.s
+
+scheme_structure/Text.o: scheme_structure/Text.cpp.o
+.PHONY : scheme_structure/Text.o
+
+# target to build an object file
+scheme_structure/Text.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Text.cpp.o
+.PHONY : scheme_structure/Text.cpp.o
+
+scheme_structure/Text.i: scheme_structure/Text.cpp.i
+.PHONY : scheme_structure/Text.i
+
+# target to preprocess a source file
+scheme_structure/Text.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Text.cpp.i
+.PHONY : scheme_structure/Text.cpp.i
+
+scheme_structure/Text.s: scheme_structure/Text.cpp.s
+.PHONY : scheme_structure/Text.s
+
+# target to generate assembly for a file
+scheme_structure/Text.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/Text.cpp.s
+.PHONY : scheme_structure/Text.cpp.s
+
+scheme_structure/abe_ciphertext.o: scheme_structure/abe_ciphertext.cpp.o
+.PHONY : scheme_structure/abe_ciphertext.o
+
+# target to build an object file
+scheme_structure/abe_ciphertext.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/abe_ciphertext.cpp.o
+.PHONY : scheme_structure/abe_ciphertext.cpp.o
+
+scheme_structure/abe_ciphertext.i: scheme_structure/abe_ciphertext.cpp.i
+.PHONY : scheme_structure/abe_ciphertext.i
+
+# target to preprocess a source file
+scheme_structure/abe_ciphertext.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/abe_ciphertext.cpp.i
+.PHONY : scheme_structure/abe_ciphertext.cpp.i
+
+scheme_structure/abe_ciphertext.s: scheme_structure/abe_ciphertext.cpp.s
+.PHONY : scheme_structure/abe_ciphertext.s
+
+# target to generate assembly for a file
+scheme_structure/abe_ciphertext.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/abe_ciphertext.cpp.s
+.PHONY : scheme_structure/abe_ciphertext.cpp.s
+
+scheme_structure/abe_key.o: scheme_structure/abe_key.cpp.o
+.PHONY : scheme_structure/abe_key.o
+
+# target to build an object file
+scheme_structure/abe_key.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/abe_key.cpp.o
+.PHONY : scheme_structure/abe_key.cpp.o
+
+scheme_structure/abe_key.i: scheme_structure/abe_key.cpp.i
+.PHONY : scheme_structure/abe_key.i
+
+# target to preprocess a source file
+scheme_structure/abe_key.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/abe_key.cpp.i
+.PHONY : scheme_structure/abe_key.cpp.i
+
+scheme_structure/abe_key.s: scheme_structure/abe_key.cpp.s
+.PHONY : scheme_structure/abe_key.s
+
+# target to generate assembly for a file
+scheme_structure/abe_key.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/abe_key.cpp.s
+.PHONY : scheme_structure/abe_key.cpp.s
+
+scheme_structure/sar_kgc.o: scheme_structure/sar_kgc.cpp.o
+.PHONY : scheme_structure/sar_kgc.o
+
+# target to build an object file
+scheme_structure/sar_kgc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/sar_kgc.cpp.o
+.PHONY : scheme_structure/sar_kgc.cpp.o
+
+scheme_structure/sar_kgc.i: scheme_structure/sar_kgc.cpp.i
+.PHONY : scheme_structure/sar_kgc.i
+
+# target to preprocess a source file
+scheme_structure/sar_kgc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/sar_kgc.cpp.i
+.PHONY : scheme_structure/sar_kgc.cpp.i
+
+scheme_structure/sar_kgc.s: scheme_structure/sar_kgc.cpp.s
+.PHONY : scheme_structure/sar_kgc.s
+
+# target to generate assembly for a file
+scheme_structure/sar_kgc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/sar_kgc.cpp.s
+.PHONY : scheme_structure/sar_kgc.cpp.s
+
+scheme_structure/sar_tree.o: scheme_structure/sar_tree.cpp.o
+.PHONY : scheme_structure/sar_tree.o
+
+# target to build an object file
+scheme_structure/sar_tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/sar_tree.cpp.o
+.PHONY : scheme_structure/sar_tree.cpp.o
+
+scheme_structure/sar_tree.i: scheme_structure/sar_tree.cpp.i
+.PHONY : scheme_structure/sar_tree.i
+
+# target to preprocess a source file
+scheme_structure/sar_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/sar_tree.cpp.i
+.PHONY : scheme_structure/sar_tree.cpp.i
+
+scheme_structure/sar_tree.s: scheme_structure/sar_tree.cpp.s
+.PHONY : scheme_structure/sar_tree.s
+
+# target to generate assembly for a file
+scheme_structure/sar_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/scheme_structure/sar_tree.cpp.s
+.PHONY : scheme_structure/sar_tree.cpp.s
 
 src/components/CipherText.o: src/components/CipherText.cpp.o
 .PHONY : src/components/CipherText.o
 
 # target to build an object file
 src/components/CipherText.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/CipherText.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/CipherText.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/CipherText.cpp.o
 .PHONY : src/components/CipherText.cpp.o
 
 src/components/CipherText.i: src/components/CipherText.cpp.i
@@ -156,8 +622,7 @@ src/components/CipherText.i: src/components/CipherText.cpp.i
 
 # target to preprocess a source file
 src/components/CipherText.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/CipherText.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/CipherText.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/CipherText.cpp.i
 .PHONY : src/components/CipherText.cpp.i
 
 src/components/CipherText.s: src/components/CipherText.cpp.s
@@ -165,8 +630,7 @@ src/components/CipherText.s: src/components/CipherText.cpp.s
 
 # target to generate assembly for a file
 src/components/CipherText.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/CipherText.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/CipherText.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/CipherText.cpp.s
 .PHONY : src/components/CipherText.cpp.s
 
 src/components/ElementList.o: src/components/ElementList.cpp.o
@@ -174,8 +638,7 @@ src/components/ElementList.o: src/components/ElementList.cpp.o
 
 # target to build an object file
 src/components/ElementList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/ElementList.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/ElementList.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/ElementList.cpp.o
 .PHONY : src/components/ElementList.cpp.o
 
 src/components/ElementList.i: src/components/ElementList.cpp.i
@@ -183,8 +646,7 @@ src/components/ElementList.i: src/components/ElementList.cpp.i
 
 # target to preprocess a source file
 src/components/ElementList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/ElementList.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/ElementList.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/ElementList.cpp.i
 .PHONY : src/components/ElementList.cpp.i
 
 src/components/ElementList.s: src/components/ElementList.cpp.s
@@ -192,8 +654,7 @@ src/components/ElementList.s: src/components/ElementList.cpp.s
 
 # target to generate assembly for a file
 src/components/ElementList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/ElementList.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/ElementList.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/ElementList.cpp.s
 .PHONY : src/components/ElementList.cpp.s
 
 src/components/HIDparam.o: src/components/HIDparam.cpp.o
@@ -201,8 +662,7 @@ src/components/HIDparam.o: src/components/HIDparam.cpp.o
 
 # target to build an object file
 src/components/HIDparam.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/HIDparam.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/HIDparam.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/HIDparam.cpp.o
 .PHONY : src/components/HIDparam.cpp.o
 
 src/components/HIDparam.i: src/components/HIDparam.cpp.i
@@ -210,8 +670,7 @@ src/components/HIDparam.i: src/components/HIDparam.cpp.i
 
 # target to preprocess a source file
 src/components/HIDparam.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/HIDparam.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/HIDparam.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/HIDparam.cpp.i
 .PHONY : src/components/HIDparam.cpp.i
 
 src/components/HIDparam.s: src/components/HIDparam.cpp.s
@@ -219,8 +678,7 @@ src/components/HIDparam.s: src/components/HIDparam.cpp.s
 
 # target to generate assembly for a file
 src/components/HIDparam.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/HIDparam.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/HIDparam.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/HIDparam.cpp.s
 .PHONY : src/components/HIDparam.cpp.s
 
 src/components/MasterKey.o: src/components/MasterKey.cpp.o
@@ -228,8 +686,7 @@ src/components/MasterKey.o: src/components/MasterKey.cpp.o
 
 # target to build an object file
 src/components/MasterKey.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/MasterKey.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/MasterKey.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/MasterKey.cpp.o
 .PHONY : src/components/MasterKey.cpp.o
 
 src/components/MasterKey.i: src/components/MasterKey.cpp.i
@@ -237,8 +694,7 @@ src/components/MasterKey.i: src/components/MasterKey.cpp.i
 
 # target to preprocess a source file
 src/components/MasterKey.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/MasterKey.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/MasterKey.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/MasterKey.cpp.i
 .PHONY : src/components/MasterKey.cpp.i
 
 src/components/MasterKey.s: src/components/MasterKey.cpp.s
@@ -246,8 +702,7 @@ src/components/MasterKey.s: src/components/MasterKey.cpp.s
 
 # target to generate assembly for a file
 src/components/MasterKey.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/MasterKey.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/MasterKey.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/MasterKey.cpp.s
 .PHONY : src/components/MasterKey.cpp.s
 
 src/components/PublicKey.o: src/components/PublicKey.cpp.o
@@ -255,8 +710,7 @@ src/components/PublicKey.o: src/components/PublicKey.cpp.o
 
 # target to build an object file
 src/components/PublicKey.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/PublicKey.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/PublicKey.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/PublicKey.cpp.o
 .PHONY : src/components/PublicKey.cpp.o
 
 src/components/PublicKey.i: src/components/PublicKey.cpp.i
@@ -264,8 +718,7 @@ src/components/PublicKey.i: src/components/PublicKey.cpp.i
 
 # target to preprocess a source file
 src/components/PublicKey.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/PublicKey.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/PublicKey.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/PublicKey.cpp.i
 .PHONY : src/components/PublicKey.cpp.i
 
 src/components/PublicKey.s: src/components/PublicKey.cpp.s
@@ -273,8 +726,7 @@ src/components/PublicKey.s: src/components/PublicKey.cpp.s
 
 # target to generate assembly for a file
 src/components/PublicKey.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/PublicKey.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/PublicKey.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/PublicKey.cpp.s
 .PHONY : src/components/PublicKey.cpp.s
 
 src/components/SecretKey.o: src/components/SecretKey.cpp.o
@@ -282,8 +734,7 @@ src/components/SecretKey.o: src/components/SecretKey.cpp.o
 
 # target to build an object file
 src/components/SecretKey.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/SecretKey.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/SecretKey.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/SecretKey.cpp.o
 .PHONY : src/components/SecretKey.cpp.o
 
 src/components/SecretKey.i: src/components/SecretKey.cpp.i
@@ -291,8 +742,7 @@ src/components/SecretKey.i: src/components/SecretKey.cpp.i
 
 # target to preprocess a source file
 src/components/SecretKey.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/SecretKey.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/SecretKey.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/SecretKey.cpp.i
 .PHONY : src/components/SecretKey.cpp.i
 
 src/components/SecretKey.s: src/components/SecretKey.cpp.s
@@ -300,8 +750,7 @@ src/components/SecretKey.s: src/components/SecretKey.cpp.s
 
 # target to generate assembly for a file
 src/components/SecretKey.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/components/SecretKey.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/components/SecretKey.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/components/SecretKey.cpp.s
 .PHONY : src/components/SecretKey.cpp.s
 
 src/curve/params.o: src/curve/params.cpp.o
@@ -309,8 +758,7 @@ src/curve/params.o: src/curve/params.cpp.o
 
 # target to build an object file
 src/curve/params.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/curve/params.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/curve/params.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/curve/params.cpp.o
 .PHONY : src/curve/params.cpp.o
 
 src/curve/params.i: src/curve/params.cpp.i
@@ -318,8 +766,7 @@ src/curve/params.i: src/curve/params.cpp.i
 
 # target to preprocess a source file
 src/curve/params.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/curve/params.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/curve/params.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/curve/params.cpp.i
 .PHONY : src/curve/params.cpp.i
 
 src/curve/params.s: src/curve/params.cpp.s
@@ -327,65 +774,39 @@ src/curve/params.s: src/curve/params.cpp.s
 
 # target to generate assembly for a file
 src/curve/params.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/curve/params.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/curve/params.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/curve/params.cpp.s
 .PHONY : src/curve/params.cpp.s
 
-src/schemes/hid_pk_ipfe_song.o: src/schemes/hid_pk_ipfe_song.cpp.o
-.PHONY : src/schemes/hid_pk_ipfe_song.o
+src/schemes/ibbe_pk_ipfe.o: src/schemes/ibbe_pk_ipfe.cpp.o
+.PHONY : src/schemes/ibbe_pk_ipfe.o
 
 # target to build an object file
-src/schemes/hid_pk_ipfe_song.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/schemes/hid_pk_ipfe_song.cpp.o
-.PHONY : src/schemes/hid_pk_ipfe_song.cpp.o
+src/schemes/ibbe_pk_ipfe.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/schemes/ibbe_pk_ipfe.cpp.o
+.PHONY : src/schemes/ibbe_pk_ipfe.cpp.o
 
-src/schemes/hid_pk_ipfe_song.i: src/schemes/hid_pk_ipfe_song.cpp.i
-.PHONY : src/schemes/hid_pk_ipfe_song.i
-
-# target to preprocess a source file
-src/schemes/hid_pk_ipfe_song.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/schemes/hid_pk_ipfe_song.cpp.i
-.PHONY : src/schemes/hid_pk_ipfe_song.cpp.i
-
-src/schemes/hid_pk_ipfe_song.s: src/schemes/hid_pk_ipfe_song.cpp.s
-.PHONY : src/schemes/hid_pk_ipfe_song.s
-
-# target to generate assembly for a file
-src/schemes/hid_pk_ipfe_song.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/schemes/hid_pk_ipfe_song.cpp.s
-.PHONY : src/schemes/hid_pk_ipfe_song.cpp.s
-
-src/schemes/wib_pk_ipfe.o: src/schemes/wib_pk_ipfe.cpp.o
-.PHONY : src/schemes/wib_pk_ipfe.o
-
-# target to build an object file
-src/schemes/wib_pk_ipfe.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/schemes/wib_pk_ipfe.cpp.o
-.PHONY : src/schemes/wib_pk_ipfe.cpp.o
-
-src/schemes/wib_pk_ipfe.i: src/schemes/wib_pk_ipfe.cpp.i
-.PHONY : src/schemes/wib_pk_ipfe.i
+src/schemes/ibbe_pk_ipfe.i: src/schemes/ibbe_pk_ipfe.cpp.i
+.PHONY : src/schemes/ibbe_pk_ipfe.i
 
 # target to preprocess a source file
-src/schemes/wib_pk_ipfe.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/schemes/wib_pk_ipfe.cpp.i
-.PHONY : src/schemes/wib_pk_ipfe.cpp.i
+src/schemes/ibbe_pk_ipfe.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/schemes/ibbe_pk_ipfe.cpp.i
+.PHONY : src/schemes/ibbe_pk_ipfe.cpp.i
 
-src/schemes/wib_pk_ipfe.s: src/schemes/wib_pk_ipfe.cpp.s
-.PHONY : src/schemes/wib_pk_ipfe.s
+src/schemes/ibbe_pk_ipfe.s: src/schemes/ibbe_pk_ipfe.cpp.s
+.PHONY : src/schemes/ibbe_pk_ipfe.s
 
 # target to generate assembly for a file
-src/schemes/wib_pk_ipfe.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/schemes/wib_pk_ipfe.cpp.s
-.PHONY : src/schemes/wib_pk_ipfe.cpp.s
+src/schemes/ibbe_pk_ipfe.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/schemes/ibbe_pk_ipfe.cpp.s
+.PHONY : src/schemes/ibbe_pk_ipfe.cpp.s
 
 src/utils/func.o: src/utils/func.cpp.o
 .PHONY : src/utils/func.o
 
 # target to build an object file
 src/utils/func.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/utils/func.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/utils/func.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/utils/func.cpp.o
 .PHONY : src/utils/func.cpp.o
 
 src/utils/func.i: src/utils/func.cpp.i
@@ -393,8 +814,7 @@ src/utils/func.i: src/utils/func.cpp.i
 
 # target to preprocess a source file
 src/utils/func.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/utils/func.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/utils/func.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/utils/func.cpp.i
 .PHONY : src/utils/func.cpp.i
 
 src/utils/func.s: src/utils/func.cpp.s
@@ -402,57 +822,56 @@ src/utils/func.s: src/utils/func.cpp.s
 
 # target to generate assembly for a file
 src/utils/func.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/src/utils/func.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/src/utils/func.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/utils/func.cpp.s
 .PHONY : src/utils/func.cpp.s
 
-unit_test/test.o: unit_test/test.cpp.o
-.PHONY : unit_test/test.o
+src/utils/utils.o: src/utils/utils.cpp.o
+.PHONY : src/utils/utils.o
 
 # target to build an object file
-unit_test/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/unit_test/test.cpp.o
-.PHONY : unit_test/test.cpp.o
+src/utils/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/utils/utils.cpp.o
+.PHONY : src/utils/utils.cpp.o
 
-unit_test/test.i: unit_test/test.cpp.i
-.PHONY : unit_test/test.i
+src/utils/utils.i: src/utils/utils.cpp.i
+.PHONY : src/utils/utils.i
 
 # target to preprocess a source file
-unit_test/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/unit_test/test.cpp.i
-.PHONY : unit_test/test.cpp.i
+src/utils/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/utils/utils.cpp.i
+.PHONY : src/utils/utils.cpp.i
 
-unit_test/test.s: unit_test/test.cpp.s
-.PHONY : unit_test/test.s
+src/utils/utils.s: src/utils/utils.cpp.s
+.PHONY : src/utils/utils.s
 
 # target to generate assembly for a file
-unit_test/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test.dir/build.make CMakeFiles/IPFE_test.dir/unit_test/test.cpp.s
-.PHONY : unit_test/test.cpp.s
+src/utils/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/src/utils/utils.cpp.s
+.PHONY : src/utils/utils.cpp.s
 
-unit_test/test_wib.o: unit_test/test_wib.cpp.o
-.PHONY : unit_test/test_wib.o
+unit_test/test_ibbe.o: unit_test/test_ibbe.cpp.o
+.PHONY : unit_test/test_ibbe.o
 
 # target to build an object file
-unit_test/test_wib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/unit_test/test_wib.cpp.o
-.PHONY : unit_test/test_wib.cpp.o
+unit_test/test_ibbe.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/unit_test/test_ibbe.cpp.o
+.PHONY : unit_test/test_ibbe.cpp.o
 
-unit_test/test_wib.i: unit_test/test_wib.cpp.i
-.PHONY : unit_test/test_wib.i
+unit_test/test_ibbe.i: unit_test/test_ibbe.cpp.i
+.PHONY : unit_test/test_ibbe.i
 
 # target to preprocess a source file
-unit_test/test_wib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/unit_test/test_wib.cpp.i
-.PHONY : unit_test/test_wib.cpp.i
+unit_test/test_ibbe.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/unit_test/test_ibbe.cpp.i
+.PHONY : unit_test/test_ibbe.cpp.i
 
-unit_test/test_wib.s: unit_test/test_wib.cpp.s
-.PHONY : unit_test/test_wib.s
+unit_test/test_ibbe.s: unit_test/test_ibbe.cpp.s
+.PHONY : unit_test/test_ibbe.s
 
 # target to generate assembly for a file
-unit_test/test_wib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_wib.dir/build.make CMakeFiles/IPFE_test_wib.dir/unit_test/test_wib.cpp.s
-.PHONY : unit_test/test_wib.cpp.s
+unit_test/test_ibbe.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IPFE_test_ibbe.dir/build.make CMakeFiles/IPFE_test_ibbe.dir/unit_test/test_ibbe.cpp.s
+.PHONY : unit_test/test_ibbe.cpp.s
 
 # Help Target
 help:
@@ -462,8 +881,67 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... IPFE_test"
-	@echo "... IPFE_test_wib"
+	@echo "... IPFE_test_ibbe"
+	@echo "... cjson/cJSON.o"
+	@echo "... cjson/cJSON.i"
+	@echo "... cjson/cJSON.s"
+	@echo "... data_structure/access_structure.o"
+	@echo "... data_structure/access_structure.i"
+	@echo "... data_structure/access_structure.s"
+	@echo "... data_structure/binary_tree.o"
+	@echo "... data_structure/binary_tree.i"
+	@echo "... data_structure/binary_tree.s"
+	@echo "... data_structure/element_t_matrix.o"
+	@echo "... data_structure/element_t_matrix.i"
+	@echo "... data_structure/element_t_matrix.s"
+	@echo "... data_structure/element_t_vector.o"
+	@echo "... data_structure/element_t_vector.i"
+	@echo "... data_structure/element_t_vector.s"
+	@echo "... data_structure/multiway_tree.o"
+	@echo "... data_structure/multiway_tree.i"
+	@echo "... data_structure/multiway_tree.s"
+	@echo "... data_structure/num_vector.o"
+	@echo "... data_structure/num_vector.i"
+	@echo "... data_structure/num_vector.s"
+	@echo "... policy_generation/policy_generation.o"
+	@echo "... policy_generation/policy_generation.i"
+	@echo "... policy_generation/policy_generation.s"
+	@echo "... policy_resolution/policy_resolution.o"
+	@echo "... policy_resolution/policy_resolution.i"
+	@echo "... policy_resolution/policy_resolution.s"
+	@echo "... scheme_structure/Ciphertext.o"
+	@echo "... scheme_structure/Ciphertext.i"
+	@echo "... scheme_structure/Ciphertext.s"
+	@echo "... scheme_structure/Ciphertext_CET.o"
+	@echo "... scheme_structure/Ciphertext_CET.i"
+	@echo "... scheme_structure/Ciphertext_CET.s"
+	@echo "... scheme_structure/Ciphertext_DET.o"
+	@echo "... scheme_structure/Ciphertext_DET.i"
+	@echo "... scheme_structure/Ciphertext_DET.s"
+	@echo "... scheme_structure/Ciphertext_HCET.o"
+	@echo "... scheme_structure/Ciphertext_HCET.i"
+	@echo "... scheme_structure/Ciphertext_HCET.s"
+	@echo "... scheme_structure/Key.o"
+	@echo "... scheme_structure/Key.i"
+	@echo "... scheme_structure/Key.s"
+	@echo "... scheme_structure/SecretKey.o"
+	@echo "... scheme_structure/SecretKey.i"
+	@echo "... scheme_structure/SecretKey.s"
+	@echo "... scheme_structure/Text.o"
+	@echo "... scheme_structure/Text.i"
+	@echo "... scheme_structure/Text.s"
+	@echo "... scheme_structure/abe_ciphertext.o"
+	@echo "... scheme_structure/abe_ciphertext.i"
+	@echo "... scheme_structure/abe_ciphertext.s"
+	@echo "... scheme_structure/abe_key.o"
+	@echo "... scheme_structure/abe_key.i"
+	@echo "... scheme_structure/abe_key.s"
+	@echo "... scheme_structure/sar_kgc.o"
+	@echo "... scheme_structure/sar_kgc.i"
+	@echo "... scheme_structure/sar_kgc.s"
+	@echo "... scheme_structure/sar_tree.o"
+	@echo "... scheme_structure/sar_tree.i"
+	@echo "... scheme_structure/sar_tree.s"
 	@echo "... src/components/CipherText.o"
 	@echo "... src/components/CipherText.i"
 	@echo "... src/components/CipherText.s"
@@ -485,21 +963,18 @@ help:
 	@echo "... src/curve/params.o"
 	@echo "... src/curve/params.i"
 	@echo "... src/curve/params.s"
-	@echo "... src/schemes/hid_pk_ipfe_song.o"
-	@echo "... src/schemes/hid_pk_ipfe_song.i"
-	@echo "... src/schemes/hid_pk_ipfe_song.s"
-	@echo "... src/schemes/wib_pk_ipfe.o"
-	@echo "... src/schemes/wib_pk_ipfe.i"
-	@echo "... src/schemes/wib_pk_ipfe.s"
+	@echo "... src/schemes/ibbe_pk_ipfe.o"
+	@echo "... src/schemes/ibbe_pk_ipfe.i"
+	@echo "... src/schemes/ibbe_pk_ipfe.s"
 	@echo "... src/utils/func.o"
 	@echo "... src/utils/func.i"
 	@echo "... src/utils/func.s"
-	@echo "... unit_test/test.o"
-	@echo "... unit_test/test.i"
-	@echo "... unit_test/test.s"
-	@echo "... unit_test/test_wib.o"
-	@echo "... unit_test/test_wib.i"
-	@echo "... unit_test/test_wib.s"
+	@echo "... src/utils/utils.o"
+	@echo "... src/utils/utils.i"
+	@echo "... src/utils/utils.s"
+	@echo "... unit_test/test_ibbe.o"
+	@echo "... unit_test/test_ibbe.i"
+	@echo "... unit_test/test_ibbe.s"
 .PHONY : help
 
 

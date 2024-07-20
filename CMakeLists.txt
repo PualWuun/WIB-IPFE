@@ -26,35 +26,31 @@ if (LOCAL_DEBUG)
     message("LOCAL_DEBUG enabled")
     add_definitions("-DDEBUG")
 endif (LOCAL_DEBUG)
-
-add_executable(IPFE_test 
-        src/schemes/hid_pk_ipfe_song.cpp
+file(GLOB SOURCES "scheme_structure/*.cpp")
+add_executable(IPFE_test_ibbe
+        src/schemes/ibbe_pk_ipfe.cpp
         src/curve/params.cpp
+        src/components/HIDparam.cpp
         src/components/ElementList.cpp
         src/components/MasterKey.cpp
         src/components/PublicKey.cpp
         src/components/SecretKey.cpp
         src/components/CipherText.cpp
-        src/components/HIDparam.cpp
         src/utils/func.cpp
-        unit_test/test.cpp)
+        src/utils/utils.cpp
+        unit_test/test_ibbe.cpp
+        cjson/cJSON.c
+        policy_resolution/policy_resolution.cpp
+        policy_generation/policy_generation.cpp
+        data_structure/multiway_tree.cpp
+        data_structure/binary_tree.cpp
+        data_structure/access_structure.cpp
+        data_structure/element_t_matrix.cpp
+        data_structure/element_t_vector.cpp
+        data_structure/num_vector.cpp
+        ${SOURCES}
+        )
         
-target_link_libraries(IPFE_test pbc OpenSSL::SSL
-        "/usr/local/lib/libpbc.a"
-        "/usr/local/lib/libgmp.a")
-
-add_executable(IPFE_test_wib 
-        src/schemes/wib_pk_ipfe.cpp
-        src/curve/params.cpp
-        src/components/ElementList.cpp
-        src/components/MasterKey.cpp
-        src/components/PublicKey.cpp
-        src/components/SecretKey.cpp
-        src/components/CipherText.cpp
-        src/components/HIDparam.cpp
-        src/utils/func.cpp
-        unit_test/test_wib.cpp)
-        
-target_link_libraries(IPFE_test_wib pbc OpenSSL::SSL
+target_link_libraries(IPFE_test_ibbe pbc OpenSSL::SSL
         "/usr/local/lib/libpbc.a"
         "/usr/local/lib/libgmp.a")
